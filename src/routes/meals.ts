@@ -129,7 +129,6 @@ export async function mealsRoutes(app: FastifyInstance) {
             let currentSequence = 0
 
             const sortedMeals = meals.sort((mealA, mealB) => new Date(mealA.date).getTime() - new Date(mealB.date).getTime())
-            console.log(sortedMeals)
             sortedMeals.forEach(meal => {
                 currentSequence = meal.is_on_diet ? currentSequence + 1 : 0
                 bestSequence = currentSequence > bestSequence ? currentSequence : bestSequence
